@@ -51,3 +51,31 @@ docker run -d --name c2 -v /home/romina/Escritorio saludo:/var/www/html -p 8282:
 ```
 
 ![image-20220411132533354](C:\Users\Romina\AppData\Roaming\Typora\typora-user-images\image-20220411132533354.png)
+
+Pantallazo que muestra el contenido de index.html accediendo a c1:
+
+![image-20220411133224256](C:\Users\Romina\AppData\Roaming\Typora\typora-user-images\image-20220411133224256.png)
+
+Pantallazo que muestra el contenido de index.html accediendo a c2:
+
+![image-20220411133245680](C:\Users\Romina\AppData\Roaming\Typora\typora-user-images\image-20220411133245680.png)
+
+
+
+#### Modifica el contenido del fichero ~/saludo/index.html.
+
+Pasos para modificar index.html desde línea de comandos:
+
+![image-20220411133405357](C:\Users\Romina\AppData\Roaming\Typora\typora-user-images\image-20220411133405357.png)
+
+Abro el archivo con el editor joe:
+
+![image-20220411133424892](C:\Users\Romina\AppData\Roaming\Typora\typora-user-images\image-20220411133424892.png)
+
+Cambio el texto del encabezado:
+
+![image-20220411133451304](C:\Users\Romina\AppData\Roaming\Typora\typora-user-images\image-20220411133451304.png)
+
+Salgo guardando los cambios:
+
+![image-20220411133511832](C:\Users\Romina\AppData\Roaming\Typora\typora-user-images\image-20220411133511832.png)
