@@ -30,3 +30,40 @@ Pantallazo donde se comprueba que no se puede borrar la imagen mariadb mientras 
 bbdd está creado.
 Pantallazo donde se vean las imágenes que tienes en tu registro local.
 Pantallazo donde se vea cómo se eliminan los contenedores utilizados.
+
+
+
+#### Arranca un contenedor que ejecute una instancia de la imagen php:7.4-apache , que se llame web y que sea accesible desde un navegador en el puerto 8000.
+
+
+
+```
+docker run -d --name web -p 8000:80 php:7.4-apache
+docker cp index.html web:/var/www/html
+```
+
+
+
+![image-20220411121340667](C:\Users\Romina\AppData\Roaming\Typora\typora-user-images\image-20220411121340667.png)
+
+
+
+#### Coloca en el directorio raíz del servicio web (/var/www/html) de dicho contenedor, un fichero llamado index.html con el siguiente contenido:
+
+<h1>HOLA SOY ROMINA SUAREZ CHAVES</h1>
+
+```
+docker exec -it web curl localhost
+```
+
+
+
+![image-20220411121527440](C:\Users\Romina\AppData\Roaming\Typora\typora-user-images\image-20220411121527440.png)
+
+
+
+Pantallazo que desde el navegador muestra el fichero index.html
+
+
+
+![image-20220411121631586](C:\Users\Romina\AppData\Roaming\Typora\typora-user-images\image-20220411121631586.png)
