@@ -75,3 +75,29 @@ docker ps -a //lista todos los contenedores
 ```
 
 ![image-20220411140659531](C:\Users\Romina\AppData\Roaming\Typora\typora-user-images\image-20220411140659531.png)
+
+
+
+
+
+#### Comprueba que el contenedor Adminer puede conectar con el contenedor mysql abriendo un navegador web y accediendo a la URL: http://localhost:8080
+
+
+
+Abro un navegador y accedo a la URL:localhost:8080/adminer. Hago el login con el usuario root y su contraseña:
+
+![image-20220411141650006](C:\Users\Romina\AppData\Roaming\Typora\typora-user-images\image-20220411141650006.png)
+
+
+
+Compruebo que tengo acceso a la base de datos mysql:
+
+![image-20220411141741508](C:\Users\Romina\AppData\Roaming\Typora\typora-user-images\image-20220411141741508.png)
+
+
+
+#### Crea una BD con la interfaz web Adminer
+
+Creo base de datos “alumnos” con 5 alumnos (los alumnos son mis hijos, mis gatos y mi marido):
+
+![image-20220411141811282](C:\Users\Romina\AppData\Roaming\Typora\typora-user-images\image-20220411141811282.png)
