@@ -7,7 +7,7 @@ Ejercicio 2 - almacenamiento
 Bind mount para compartir datos
 
 1. Crea una carpeta llamada saludo y dentro de ella crea un fichero llamado index.html con el
-  siguiente contenido (Deberás sustituir ese XXXXX por tu nombre.):
+    siguiente contenido (Deberás sustituir ese XXXXX por tu nombre.):
 
 2. Una vez hecho esto, arranca dos contenedores basados en la imagen php:7.4-apache que hagan un bind mount de la carpeta saludo en la carpeta /var/www/html del contenedor. Uno de ellos vamos a acceder con el puerto 8181 y el otro con el 8282. Y su nombres serán c1 y c2 .
 
@@ -27,3 +27,27 @@ Bind mount para compartir datos
   Pantallazo donde se pueda apreciar que accediendo a c2 se puede ver el contenido de index.html .
   Otros dos pantallazos donde se vea el acceso al fichero index.html después de modificarlo.
   Borrar los dos contenedores. Mostrar que se han borrado.
+
+
+
+#### Bind mount para compartir datos
+
+#### Crea una carpeta llamada saludo y dentro de ella crea un fichero llamado index.html con el siguiente contenido: HOLA SOY ROMINA SUAREZ CHAVES
+
+
+
+Pantallazo para arrancar el contenedor c1 (puerto 8181) realizando bind mount con la carpeta saludo:
+
+```
+docker run -d --name c1 -v /home/romina/Escritorio saludo:/var/www/html -p 8181:80 php:7.4-apache
+```
+
+![image-20220411132513328](C:\Users\Romina\AppData\Roaming\Typora\typora-user-images\image-20220411132513328.png)
+
+Pantallazo para arrancar el contenedor c2 (puerto 8282) realizando bind mount con la carpeta saludo:
+
+```
+docker run -d --name c2 -v /home/romina/Escritorio saludo:/var/www/html -p 8282:80 php:7.4-apache
+```
+
+![image-20220411132533354](C:\Users\Romina\AppData\Roaming\Typora\typora-user-images\image-20220411132533354.png)
