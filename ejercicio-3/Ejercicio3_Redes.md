@@ -101,3 +101,15 @@ Compruebo que tengo acceso a la base de datos mysql:
 Creo base de datos “alumnos” con 5 alumnos (los alumnos son mis hijos, mis gatos y mi marido):
 
 ![image-20220411141811282](C:\Users\Romina\AppData\Roaming\Typora\typora-user-images\image-20220411141811282.png)
+
+
+
+Pantallazo donde se entra a la consola del servidor web en modo texto y se comprueba que se ha creado la BD:
+
+
+
+![image-20220411142830010](C:\Users\Romina\AppData\Roaming\Typora\typora-user-images\image-20220411142830010.png)
+
+ Compruebo en adminer que se trata de la BD que he creado:
+
+![image-20220411143032784](C:\Users\Romina\AppData\Roaming\Typora\typora-user-images\image-20220411143032784.png)
