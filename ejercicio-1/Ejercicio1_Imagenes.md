@@ -96,3 +96,27 @@ Pantallazo que desde el navegador muestra la salida del script mes.php:
 Pantallazo donde se vea el tamaño del contenedor web después de crear los dos ficheros:
 
 ![image-20220411123623975](C:\Users\Romina\AppData\Roaming\Typora\typora-user-images\image-20220411123623975.png)
+
+
+
+#### Servidor de base de datos: 
+
+#### Arrancar un contenedor que se llame bbdd y que ejecute una instancia de la imagen mariadb.
+
+Comando para la creación de la base de datos con las variables de entorno necesarias para cumplir con las especificaciones del ejercicio:
+
+```
+docker run -d -p 3306:3306 --name bbdd -e MYSQL_DATABASE=prueba -e MYSQL_ROOT_PASSWORD=root -e MYSQL_USER=invitado -e MYSQL_PASSWORD=invitado -e MARIADB_ROOT_PASSWORD=root mariadb:latest
+```
+
+Primero me conecto a la base de datos con el usuario root:
+
+![image-20220411124452024](C:\Users\Romina\AppData\Roaming\Typora\typora-user-images\image-20220411124452024.png)
+
+Pantallazo que muestra cómo me conecto a la base de datos con el usuario invitado:
+
+![image-20220411124518152](C:\Users\Romina\AppData\Roaming\Typora\typora-user-images\image-20220411124518152.png)
+
+Pantallazo  que muestra que me puedo conectar a la base de datos con el usuario invitado y que se ha creado la base de datos prueba:
+
+![image-20220411124620407](C:\Users\Romina\AppData\Roaming\Typora\typora-user-images\image-20220411124620407.png)
