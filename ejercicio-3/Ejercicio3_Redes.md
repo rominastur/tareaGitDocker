@@ -2,21 +2,6 @@
 
 [TOC]
 
-Ejercicio 3 - redes
-
-Despliegue de contenedores en red: Adminer y MariaDB
-
-1. Crea una red bridge redbd
-
-2. Crea un contenedor con una imagen de mariaDB que estará en la red redbd . Este contenedor se
-    ejecutará en segundo plano, y será accesible a través del puerto 3306. (Es necesario definir la
-    contraseña del usuario root y un volumen de datos persistente)
-
-3. Crea un contenedor con Adminer que se pueda conectar al contenedor de la BD
-
-4. Comprueba que el contenedor Adminer puede conectar con el contenedor mysql abriendo un
-    navegador web y accediendo a la URL: http://localhost:8080
-
   Entregar:
 
   Los siguientes pantallazos y los comandos empleados para resolver cada apartado:
@@ -35,9 +20,14 @@ Despliegue de contenedores en red: Adminer y MariaDB
 
 #### Crea una red bridge redbd
 
+
+
 Comandos para crear la red redbd e inspeccionarla:
 
-
+```
+docker network create redbd
+docker network inspect redbd
+```
 
 ![image-20220411140351666](C:\Users\Romina\AppData\Roaming\Typora\typora-user-images\image-20220411140351666.png)
 
@@ -104,7 +94,9 @@ Creo base de datos “alumnos” con 5 alumnos (los alumnos son mis hijos, mis g
 
 
 
-Pantallazo donde se entra a la consola del servidor web en modo texto y se comprueba que se ha creado la BD:
+
+
+#### Pantallazo donde se entra a la consola del servidor web en modo texto y se comprueba que se ha creado la BD
 
 
 
@@ -113,3 +105,45 @@ Pantallazo donde se entra a la consola del servidor web en modo texto y se compr
  Compruebo en adminer que se trata de la BD que he creado:
 
 ![image-20220411143032784](C:\Users\Romina\AppData\Roaming\Typora\typora-user-images\image-20220411143032784.png)
+
+
+
+
+
+#### Borrar los contenedores, la red, y los volúmenes utilizados
+
+
+
+Los contenedores, los paro, los borro y listo para comprobar que ya no están:
+
+```
+docker stop mdb cadminer //paro los contenedores mdb y cadminer
+docker rm mdb cadminer //borro los contenedores mdb y cadminer
+docker ps -a //listo todos los contenedores para comprobar que se han borrado
+```
+
+![image-20220411143825241](C:\Users\Romina\AppData\Roaming\Typora\typora-user-images\image-20220411143825241.png)
+
+
+
+La red, listo para copiar su id, la borro y vuelvo a listar:
+
+```
+docker network ls //listo las redes para copiar la id de la redbd
+docker network rm network_ID //borro la red identificándola por su ID
+docker network ls  //listo para comprobar que se ha borrado
+```
+
+![image-20220411143918446](C:\Users\Romina\AppData\Roaming\Typora\typora-user-images\image-20220411143918446.png)
+
+
+
+El volumen datos, primero listo, tengo 4 volúmenes, borro el volumen utilizado en este ejercicio (datos) y vuelvo a listar comprobando que quedan los otros 3 volúmenes:
+
+```
+docker volume ls //listo volúmenes
+docker volume rm datos //borro volumen datos
+docker volume ls //listo para comprobar que el volumen datos ya no aparece
+```
+
+![image-20220411143940830](C:\Users\Romina\AppData\Roaming\Typora\typora-user-images\image-20220411143940830.png)
