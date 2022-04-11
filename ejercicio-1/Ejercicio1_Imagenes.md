@@ -62,8 +62,31 @@ docker exec -it web curl localhost
 
 
 
-Pantallazo que desde el navegador muestra el fichero index.html
+Pantallazo que desde el navegador muestra el fichero index.html:
 
 
 
 ![image-20220411121631586](C:\Users\Romina\AppData\Roaming\Typora\typora-user-images\image-20220411121631586.png)
+
+
+
+#### Colocar en ese mismo directorio raíz un archivo llamado mes.php que muestre el nombre del mes actual. Ver la salida del script en el navegador. 
+
+
+
+```
+docker cp mes.php web:/var/www/html
+docker exec -it web bash
+```
+
+
+
+![image-20220411123110281](C:\Users\Romina\AppData\Roaming\Typora\typora-user-images\image-20220411123110281.png)
+
+
+
+Pantallazo que desde el navegador muestra la salida del script mes.php:
+
+
+
+![image-20220411123210875](C:\Users\Romina\AppData\Roaming\Typora\typora-user-images\image-20220411123210875.png)
