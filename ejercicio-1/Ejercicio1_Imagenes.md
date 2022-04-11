@@ -2,21 +2,7 @@
 
 [TOC]
 
-Ejercicio 1 - trabajo con imágenes
-Servidor web
-Arranca un contenedor que ejecute una instancia de la imagen php:7.4-apache , que se llame web y que sea accesible desde un navegador en el puerto 8000.
-Coloca en el directorio raíz del servicio web ( /var/www/html ) de dicho contenedor un fichero llamado index.html con el siguiente contenido:
 
-Deberás sustituir XXXXXXXXXXX por tu nombre y tus apellidos.
-Colocar en ese mismo directorio raíz un archivo llamado mes.php que muestre el nombre del mes actual. Ver la salida del script en el navegador. Borrar el contenedor
-
-Servidor de base de datos
-Arrancar un contenedor que se llame bbdd y que ejecute una instancia de la imagen mariadb.
-Antes de arrancarlo, visita la página en Docker Hub.
-Establece las variables de entorno necesarias para que:
-La contraseña de root sea root .
-Crear una base de datos automáticamente al arrancar que se llame prueba.
-Crear el usuario invitado con la contraseña invitado .
 
 Entregar:
 Un documento con los siguientes pantallazos, y los comandos empleados para resolver cada apartado:
@@ -101,7 +87,15 @@ Pantallazo donde se vea el tamaño del contenedor web después de crear los dos 
 
 #### Servidor de base de datos: 
 
-#### Arrancar un contenedor que se llame bbdd y que ejecute una instancia de la imagen mariadb.
+#### Arrancar un contenedor que se llame bbdd y que ejecute una instancia de la imagen mariadb. 
+
+#### Antes de arrancarlo, visita la página en Docker Hub. Establece las variables de entorno necesarias para que: 
+
+#### La contraseña de root sea root .
+
+#### Crear una base de datos automáticamente al arrancar que se llame prueba.
+
+#### Crear el usuario invitado con la contraseña invitado.
 
 Comando para la creación de la base de datos con las variables de entorno necesarias para cumplir con las especificaciones del ejercicio:
 
@@ -120,3 +114,48 @@ Pantallazo que muestra cómo me conecto a la base de datos con el usuario invita
 Pantallazo  que muestra que me puedo conectar a la base de datos con el usuario invitado y que se ha creado la base de datos prueba:
 
 ![image-20220411124620407](C:\Users\Romina\AppData\Roaming\Typora\typora-user-images\image-20220411124620407.png)
+
+
+
+Pantallazo donde se comprueba que no se puede borrar la imagen mariadb mientras el contenedor bbdd está creado:
+
+```
+docker rmi id_contenedor //borro por id
+```
+
+![image-20220411125346511](C:\Users\Romina\AppData\Roaming\Typora\typora-user-images\image-20220411125346511.png)
+
+
+
+Pantallazo donde se vean las imágenes que tienes en tu registro local:
+
+```
+docker ps -a  //listo contenedores
+```
+
+![image-20220411125541541](C:\Users\Romina\AppData\Roaming\Typora\typora-user-images\image-20220411125541541.png)
+
+
+
+Pantallazo listando contenedores para consultar sus id:
+
+```
+docker ps -a //consulto id de los contenedores
+```
+
+![image-20220411125618411](C:\Users\Romina\AppData\Roaming\Typora\typora-user-images\image-20220411125618411.png)
+
+
+
+Pantallazo donde muestro cómo borro los dos contenedores utilizados en el ejercicio 1 y vuelvo a listar contenedores para comprobar que ya no están:
+
+```
+docker rm id_contenedor1 id_contenedor2 //borro por id
+docker stop id_contenedor1 //paro contenedor1
+docker rm id_contenedor1 //borro contenedor1
+docker ps -a  //listo contenedores
+```
+
+El primer contenedor estaba en ejecución, por lo que tuve que pararlo antes de borrarlo:
+
+![image-20220411125648737](C:\Users\Romina\AppData\Roaming\Typora\typora-user-images\image-20220411125648737.png)
