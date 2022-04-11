@@ -90,3 +90,9 @@ Pantallazo que desde el navegador muestra la salida del script mes.php:
 
 
 ![image-20220411123210875](C:\Users\Romina\AppData\Roaming\Typora\typora-user-images\image-20220411123210875.png)
+
+
+
+Pantallazo donde se vea el tamaño del contenedor web después de crear los dos ficheros:
+
+![image-20220411123623975](C:\Users\Romina\AppData\Roaming\Typora\typora-user-images\image-20220411123623975.png)
